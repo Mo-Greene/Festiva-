@@ -79,8 +79,8 @@ def check_dup():
     return jsonify({'result': 'success', 'exists': exists})
 
 
-@app.route('/')
-def home():
+@app.route('/login/token')
+def token():
     token_receive = request.cookies.get('mytoken')
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
@@ -97,6 +97,18 @@ def home():
 def login():
     msg = request.args.get("msg")
     return render_template('login.html', msg=msg)
+
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/mypage')
+def mypage():
+    return render_template('mypage.html')
+
+@app.route('/fork')
+def fork():
+    return render_template('fork.html')
 
 
 if __name__ == '__main__':
