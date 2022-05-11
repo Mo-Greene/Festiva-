@@ -18,7 +18,7 @@ client = MongoClient('mongodb+srv://test:sparta@cluster0.lovi7.mongodb.net/Clust
 db = client.dbsparta  # dbsparta 는 변경
 
 
-# 로그인
+# 로그인 
 @app.route('/sign_in', methods=['POST'])
 def sign_in():
     username_receive = request.form['username_give']
