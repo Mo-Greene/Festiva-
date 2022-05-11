@@ -11,6 +11,7 @@ db = client.dbsparta
 
 from datetime import datetime
 
+# 저장
 @app.route('/review', methods=['POST'])
 def comment_post():
     place_receive = request.form['place_give']
