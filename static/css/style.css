@@ -32,28 +32,7 @@
      .mini_menu > a:hover{
          color: gray;
      }
-     .title{
-            margin: 40px;
-            text-align: center;
-     }
-     .fesiv_card{
-         display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;}
-    .row{
-        background-color: #FFE2D2;
-    }
 
-     .badge{
-         margin: 0 15px 0 0;
-     }
-     .row{
-         width: 600px;
-     }
-     .card-text{
-         min-width: 550px;
-     }
     .mybtn{
         border-radius: 6px;
         border: #FDAB7D;
