@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="https://kit.fontawesome.com/99af00623e.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -14,66 +15,88 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
-    <title>Title</title>
+
+    <!--og태그랑 파비콘-->
+{#        <meta property="og:title" content="FESTIVA!"/>#}
+{#        <meta property="og:description" content="사회적 거리두기도 풀렸겠다!! 축제가자!!"/>#}
+{#        <meta property="og:image" content="{{ url_for('image', filename='logo.png') }}"/>#}
+{#        <link rel="shortcut icon" href="{{ url_for('image', filename='favicon.ico') }}" type="image/x-icon">#}
+{#        <link rel="icon" href="{{ url_for('image', filename='favicon.ico') }}" type="image/x-icon">#}
+
+
+
+
+    <title>놀자놀자!</title>
 </head>
 <style>
+     /* * {*/
+     /*       font-family: 'Gowun Dodum', sans-serif;*/
+     /*   }*/
 
+     /*.mytitle {*/
+     /*       width: 100%;*/
+     /*       height: 150px;*/
+
+     /*       background-color: peachpuff;*/
+     /*       background-image: url("../static/image/logo.png");*/
+     /*       background-repeat: no-repeat;*/
+     /*       background-position: center;*/
+     /*       background-size: contain;*/
+
+     /*       color: white;*/
+
+     /*       display: flex;*/
+     /*       flex-direction: column;*/
+     /*       align-items: center;*/
+     /*       justify-content: center;*/
+     /*   }*/
 </style>
- <script>
-        $(document).ready(function () {
-            show_bucket();
-        });
-
-        function show_bucket() {
-            $.ajax({
-                type: "GET",
-                url: "/bucket",
-                data: {},
-                success: function (response) {
-
-                }
-            });
-        }
-
-        function save_bucket() {
-            let bucket = $('#bucket').val()
+<script>
+    // $(document).ready(function () {
+    //     show_festival();
+    // });
 
 
-            $.ajax({
-                type: "POST",
-                url: "/bucket",
-                data: {bucket_give: bucket},
-                success: function (response) {
-                     alert(response["msg"])
-                    window.location.reload()
-                }
-            });
-        }
-
-        function done_bucket(num) {
-            $.ajax({
-                type: "POST",
-                url: "/bucket/done",
-                data: {num_give: num},
-                success: function (response) {
-
-                    window.location.reload()
-                }
-            });
-        }
-          function cancel_bucket(num) {
-            $.ajax({
-                type: "POST",
-                url: "/bucket/cancel",
-                data: {num_give: num},
-                success: function (response) {
-
-                    window.location.reload()
-                }
-            });
-        }
     </script>
 <body>
+<div class="mini_menu">
+    <a href="/review">리뷰</a>
+    ||
+    <a href="/mypage">마이페이지</a>
+</div>
+<div class="mytitle">
 
+
+</div>
+
+<div>
+    <h2 class="title"> 🎉올해의 축제 리스트🎉 </h2>
+</div>
+
+{% for item in items %}
+    {% if '2022' in item.fstvlStartDate %}
+    <div class="fesiv_card" id="festiv_list">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <p class="card-text"><span class="badge bg-dark">이름</span>{{ item.fstvlNm }}</p>
+                        <p class="card-text"><span class="badge bg-dark">기간</span>{{ item.fstvlStartDate }}
+                            ~ {{ item.fstvlEndDate }}</p>
+                        <p class="card-text"><span class="badge bg-dark">장소</span>{{ item.rdnmadr }}</p>
+                        <p class="card-text"><span class="badge bg-dark">내용</span>{{ item.fstvlCo }}</p>
+                        {% if item.homepageUrl != "" %}
+                            <a href="{{ item.homepageUrl }}" target="_blank">
+                                <button type="button" class="btn btn-secondary">축제에 대해 더 알아보기!</button>
+                            </a>
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
 </body>
 </html>
