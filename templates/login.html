@@ -157,11 +157,11 @@
                 $("#help_birth").text("'출생연도'를 입력하세요.").removeClass("is-safe").addClass("is-danger")
                 $("#input-year").focus()
                 return;
-            } else if (year/2004 >= 1) {
+            } else if (year>=2004) {
                 $("#help_birth").text("2004년 이후 출생자입니다.").removeClass("is-safe").addClass("is-danger")
                 $("#input-year").focus()
                 return;
-            } else if (year/1922 <= 1) {
+            } else if (year<=1992) {
                 $("#help_birth").text("100세 이상은 가입되지 않습니다.").removeClass("is-safe").addClass("is-danger")
                 $("#input-year").focus()
                 return;
