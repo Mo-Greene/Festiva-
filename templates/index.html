@@ -15,17 +15,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
-
-    <!--og태그랑 파비콘-->
-{#        <meta property="og:title" content="FESTIVA!"/>#}
-{#        <meta property="og:description" content="사회적 거리두기도 풀렸겠다!! 축제가자!!"/>#}
-{#        <meta property="og:image" content="{{ url_for('image', filename='logo.png') }}"/>#}
-{#        <link rel="shortcut icon" href="{{ url_for('image', filename='favicon.ico') }}" type="image/x-icon">#}
-{#        <link rel="icon" href="{{ url_for('image', filename='favicon.ico') }}" type="image/x-icon">#}
-
-
-
-
     <title>놀자놀자!</title>
 </head>
 <style>
@@ -55,9 +44,7 @@
     // $(document).ready(function () {
     //     show_festival();
     // });
-
-
-    </script>
+</script>
 <body>
 <div class="mini_menu">
     <a href="/review">리뷰</a>
@@ -87,7 +74,7 @@
                         <p class="card-text"><span class="badge bg-dark">내용</span>{{ item.fstvlCo }}</p>
                         {% if item.homepageUrl != "" %}
                             <a href="{{ item.homepageUrl }}" target="_blank">
-                                <button type="button" class="btn btn-secondary">축제에 대해 더 알아보기!</button>
+                                <button type="button" class="btn">축제에 대해 더 알아보기!</button>
                             </a>
 
                         {% endif %}
