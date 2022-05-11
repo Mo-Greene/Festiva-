@@ -92,6 +92,12 @@ def token():
     except jwt.exceptions.DecodeError:
         return redirect(url_for("login", msg="로그인 정보가 존재하지 않습니다."))
 
+@app.route('/festival')
+def home():
+ r = requests.get("http://api.data.go.kr/openapi/tn_pubr_public_cltur_fstvl_api?serviceKey=2%2FK1CdSKKycm%2FIyr1z09L2cFGNZIOO0uBgTNREIj3m8CbuZg5jcGqGzQV%2FhKIbphrEEOOeoxzwyj4vgco6M1bg%3D%3D&pageNo=0&numOfRows=100&type=json")
+ response = r.json()
+ items = response['response']['body']['items']
+ return render_template('festiv.html', items=items)
 
 @app.route('/login')
 def login():
