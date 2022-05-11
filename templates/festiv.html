@@ -40,6 +40,17 @@
      .card-text{
          min-width: 550px;
      }
+     .more{
+          display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+             margin-bottom: 20px;
+     }
+     .why{
+         text-decoration: none;
+         color: black;
+     }
 </style>
 <script>
     // $(document).ready(function () {
@@ -58,7 +69,6 @@
 <div>
     <h2 class="title"> 🎉올해의 축제 리스트🎉 </h2>
 </div>
-
 {% for item in items %}
     {% if '2022' in item.fstvlStartDate %}
     <div class="fesiv_card" id="festiv_list">
@@ -84,5 +94,19 @@
     </div>
     {% endif %}
 {% endfor %}
+
+<div class="more">
+    <button class="mybtn">
+        <a class="why" href="https://korean.visitkorea.or.kr/main/main.do#home" target="_blank">
+            더 많은 축제 보기
+        </a>
+    </button>
+</div>
+
+<div class="copy">&copy; copyright by 🙋‍♂️항해 99 7기 13조원들🙋‍♀
+<a class="git" href="https://github.com/hanggae99-7-13" target="_blank">Github</a>
+</div>
+
+
 </body>
 </html>

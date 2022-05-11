@@ -27,14 +27,16 @@
             align-items: center;
             justify-content: right;
 
-         padding: 5px 3px 10px 0;
+
+
+         padding: 5px 5px 10px 0;
 
          background-color: #FFE2D2;
      }
      .mini_menu > a {
          margin: 0 5px;
          text-decoration: none;
-         color: black;
+         color: #c47c59;
      }
      .mini_menu > a:hover{
          color: gray;
@@ -52,3 +54,18 @@
     .mybtn:hover{
         background-color: rgba(253, 171, 125, 0.71);
     }
+
+    /*아래 바*/
+    .copy {
+        text-align: center;
+        height: 100px;
+        line-height: 100px;
+        background-color: #FFE2D2;
+    }
+    .copy > a{
+        color: #c47c59;
+    }
+    .copy > a:hover{
+        color: rgba(253, 171, 125, 0.71);
+    }
+
