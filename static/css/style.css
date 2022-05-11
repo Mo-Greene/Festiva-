@@ -54,3 +54,14 @@
      .card-text{
          min-width: 550px;
      }
+    .mybtn{
+        border-radius: 6px;
+        border: #FDAB7D;
+
+        background-color: #FDAB7D;
+
+        padding: 4px 6px;
+    }
+    .mybtn:hover{
+        background-color: rgba(253, 171, 125, 0.71);
+    }
