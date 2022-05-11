@@ -19,8 +19,7 @@ body {
 .mypage-box {
     background-color: white;
 
-    width: 45vw;
-    height: 95vh;
+    width: 50vw;
 
     margin: 20px auto 20px auto;
 
@@ -34,6 +33,12 @@ body {
 .mypage-box > h1 {
     padding-top: 30px;
 }
+.mypage-box_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .mypage-box_text {
     display: flex;
     justify-content: space-between;
@@ -41,9 +46,19 @@ body {
 
     margin: 50px 30px 30px 40px;
 }
-.mypage-box_font {
+.mypage-img {
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    background-color: tomato;
+}
+.mypage-box_title {
     font-size : 17px;
-    font-weight: 500;
+    font-weight: bold;
 }
 .mypage-box_btn {
     display: flex;
